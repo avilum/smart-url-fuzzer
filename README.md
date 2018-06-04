@@ -1,8 +1,8 @@
 # Smart Url Fuzzer
 An asynchronous, robust website URLs explorer.<br>
-Shitty companies do it money... i decided to do it on my own, and better then them.<br>
 The fuzzer maps existing resources in a website by url. Highly configurable yes simple, fast and cross platform.<br>
-I developed this for pentesting purposes.<br>
+Companies do it for money... i decided to do it on my own, and better then them.<br>
+I developed this for pentesting purposes,<br>
 <b>Please use it with responsibility.<b>
 
 ### Examples
