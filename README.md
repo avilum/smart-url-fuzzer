@@ -28,7 +28,7 @@ Options:
                         The target website to scan.
   -l LIST_FILE, --list=LIST_FILE
                         A file containing the paths to check (separated with
-                        lines
+                        lines).
 ```
 
 You can use a custom paths lists, based on the website type, or based on your needs.<br>
@@ -45,8 +45,7 @@ https://www.facebook.com/xp_publish.php : 200
 https://www.facebook.com/categories_0222.php : 200
 https://www.facebook.com/3d_exhibits1.php : 200
 https://www.facebook.com/adr_cell.php : 200
-2018-06-04 17:15:22,522 - fuzzing - INFO - The endpoints were exported to "endpoints.txt"
-
+####-##-## ##:##:##,### - fuzzing - INFO - The endpoints were exported to "endpoints.txt"
 
 ```
 
