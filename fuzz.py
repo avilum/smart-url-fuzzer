@@ -233,8 +233,7 @@ if __name__ == '__main__':
                           'Check out the "words_list"" directory for lists examples.',
                           usage='%prog -u https://example.com/', version='%prog 0.1')
     parser.add_option('-u', '--url', dest='base_url', help='The target website to scan.', default=DEFAULT_BASE_URL)
-    parser.add_option('-l', '--list', dest='list_file', help='A file containing the paths to check (separated with '
-                                                             'lines).',
+    parser.add_option('-l', '--list', dest='list_file', help='A file containing the paths to check (separated with lines).',
                       default=DEFAULT_PATHS_LIST_FILE)
     (options, args) = parser.parse_args()
     list_file = options.list_file
