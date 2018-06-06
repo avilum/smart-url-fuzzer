@@ -1,7 +1,8 @@
 # Smart Url Fuzzer
-An asynchronous, robust website URLs explorer with mininum dependencies.<br>
+An asynchronous, robust website URLs explorer<br>
 Highly configurable, yet fast and simple.<br>
-I developed this for pentesting purposes,<br>
+I developed this for pentesting purposes.<br>
+nmap's http module does quite the same, but with a lot of dependencies. 
 Companies provide this service for money, so I decided to do it on my own.<br>
 <b>Please use it responsibly.<b>
 
