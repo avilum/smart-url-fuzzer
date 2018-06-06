@@ -1,7 +1,6 @@
 # Smart Url Fuzzer
-An asynchronous, robust website URLs explorer.<br>
-Discovers websites resources.<br>
-Highly configurable yet fast and simple.<br>
+An asynchronous, robust website URLs explorer with mininum dependencies.<br>
+Highly configurable, yet fast and simple.<br>
 I developed this for pentesting purposes,<br>
 Companies provide this service for money, so I decided to do it on my own.<br>
 <b>Please use it responsibly.<b>
