@@ -1,4 +1,4 @@
-# Smart Url Fuzzer
+# What's in this website?
 An asynchronous, robust website URLs explorer<br>
 Highly configurable, yet fast and simple.<br>
 I developed this for pentesting purposes.<br>
