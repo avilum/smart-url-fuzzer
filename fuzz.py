@@ -31,6 +31,29 @@ BACKUP_LOGS_FILES_COUNT = 5
 FUZZING_LOGGER_NAME = 'fuzzing'
 LOG_FILE_MAX_BYTES = 0.5 * 1000 * 1000  # 500 KB
 
+class FilesFactory(object):
+    """
+    Manage files and directories
+    """
+    files = []
+    urls = []
+
+    def read_files_from_directory(self, user_path):
+        self.files = [os.path.join(user_path, f) for f in os.listdir(user_path) if os.path.isfile(os.path.join(user_path, f))]
+
+    def read_lines_from_files(self):
+        for l in self.files:
+            h = open(l, 'r')
+            self.urls += h.read().splitlines()
+
+    def __init__(self,user_path):
+        if os.path.isdir(user_path):
+            self.read_files_from_directory(user_path)
+            self.read_lines_from_files()
+        elif(os.path.isfile(user_path)):
+            self.files.append(user_path)
+            self.read_lines_from_files()
+
 
 class LoggerFactory(object):
     """
@@ -192,7 +215,7 @@ class AsyncURLFuzzer(object):
             self._logger.warning(
                 'There were no discovered endpoints. consider using a different file from "words_list" directory')
         self._logger.info('The following endpoints are active:{0}{1}'.format(os.linesep, os.linesep.join(output_lines)))
-        with open(self._output_file_path, 'w') as output_file:
+        with open(self._output_file_path, 'a+') as output_file:
             output_lines.sort()
             output_file.write(os.linesep.join(output_lines))
         self._logger.info('The endpoints were exported to "{0}"'.format(self._output_file_path))
@@ -246,5 +269,11 @@ if __name__ == '__main__':
     logging.getLogger("urllib3").setLevel(logging.ERROR)
     logging.getLogger("requests").setLevel(logging.ERROR)
 
-    fuzzer = AsyncURLFuzzer(base_url, list_file)
-    fuzzer.start()
+    if (os.path.isdir(base_url) or os.path.isfile(base_url)):
+        FilesFactory(base_url)
+        for u in FilesFactory.urls:
+            fuzzer = AsyncURLFuzzer(u, list_file)
+            fuzzer.start()
+    else:
+        fuzzer = AsyncURLFuzzer(base_url, list_file)
+        fuzzer.start()
