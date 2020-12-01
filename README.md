@@ -7,14 +7,18 @@ Companies provide this service for money, so I decided to do it on my own.<br>
 <b>Please use it responsibly.<b>
 
 ### Examples
-
+```bash
+git clone git@github.com:avilum/smart-url-fuzzer.git && cd smart-url-fuzzer
+pip install -r requirements.txt
+```
 ```bash
 # This will find all the active endpoints in https://www.example.com
-$ python fuzz.py 
+$ ./fuzz
 ```
 
 ### Custom words lists
 ```bash
+$ # Or, Using Python
 $ python fuzz.py --help
 Usage: fuzz.py -u https://example.com/
 
